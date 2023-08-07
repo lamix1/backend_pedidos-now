@@ -1,0 +1,23 @@
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=23.7.0",
+]
+
+[project]
+name = "backend_pedidos-now"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "lamix1", email = "camilacristina328santoss@gmail.com"},
+]
+dependencies = [
+    "django>=4.2.4",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
