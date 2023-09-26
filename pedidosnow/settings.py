@@ -37,7 +37,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # 'cloudinary_storage',
+    # 'cloudinary',
+    "django_extensions",
+    "corsheaders",
+    "drf_spectacular",
+    "django_filters",
     "rest_framework",
+    # "rest_framework_simplejwt",
+    "uploader",
     "apppedidosnow",
 ]
 

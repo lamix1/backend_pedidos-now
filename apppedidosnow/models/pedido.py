@@ -6,15 +6,15 @@ class Pedido(models.Model):
     class StatusPedido(models.IntegerChoices):
         PRODUCAO = (
             1,
-            "Em Produção",
+            "Produção",
         )
-        FINALIZADO = (
+        PRONTO = (
             2,
             "Pronto",
         )
         FECHADO = (
             3,
-            "Finalizado e pago",
+            "Fechado",
         )
 
         # usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, related_name="pedidos")
