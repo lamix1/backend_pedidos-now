@@ -1,18 +1,17 @@
 from django.db import models
 
-class Categoria(models.Model):
-    descricao = models.CharField(max_length=100)
-    def __str__(self):
-        return self.descricao
+from apppedidosnow.models import Categoria
 
 class Produto(models.Model):
     titulo = models.CharField(max_length=255)
+    quantidade = models.IntegerField(default=1, null=True, blank=True)
     código = models.CharField(max_length=8, null=True, blank=True)
     preco = models.DecimalField(max_digits=7, decimal_places=2, default=0, null=True, blank=True)
     gramas = models.DecimalField(max_digits=7, decimal_places=2, default=0, null=True, blank=True)
     categoria = models.ForeignKey(
         Categoria, on_delete=models.PROTECT, related_name="produtos"
     )
-    def __str__(self):
-        return f"{self.titulo}"
+    
 
+    def __str__(self):
+        return f"{self.titulo} ({self.quantidade})"

@@ -10,3 +10,4 @@ class CategoriaViewSet(ModelViewSet):
 class ProdutoViewSet(ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
+
