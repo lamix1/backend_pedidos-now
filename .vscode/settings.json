@@ -1,4 +1,10 @@
 {
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/__pypackages__/3.10/lib"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/__pypackages__/3.10/lib"
+  ],
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["--line-length=79"]
 }
