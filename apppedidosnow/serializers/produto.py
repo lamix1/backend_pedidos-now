@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer, SlugRelatedField
+from rest_framework.serializers import ModelSerializer, SlugRelatedField, CharField
 
 from apppedidosnow.models import Produto
 
@@ -10,9 +10,10 @@ class ProdutoDetailSerializer(ModelSerializer):
         depth = 1
 
 class ProdutoListSerializer(ModelSerializer):
+    categoria = CharField(source="categoria.descricao")
     class Meta:
         model = Produto
-        fields = ["id", "titulo", "preco"]
+        fields = ["id", "titulo", "preco", "categoria"]
 
 class ProdutoSerializer(ModelSerializer):
     class Meta:

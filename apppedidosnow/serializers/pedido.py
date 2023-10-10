@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.serializers import CharField, ModelSerializer, SerializerMethodField
 
-from apppedidosnow.models import Pedido, ItensPedido
+from apppedidosnow.models import Pedido, ItensPedido, Produto
 
 
 class ItensPedidoSerializer(ModelSerializer):
@@ -17,42 +17,39 @@ class ItensPedidoSerializer(ModelSerializer):
 
 
 class PedidoSerializer(ModelSerializer):
-    # usuario = CharField(source="usuario.email", read_only=True)
     status = CharField(source="get_status_display", read_only=True)
-    # data = serializers.DateTimeField(read_only=True)
     itens = ItensPedidoSerializer(many=True, read_only=True)
 
     class Meta:
         model = Pedido
-        fields = ("id", "status", "total", "itens")
+        fields = ("id", "cliente", "mesa", "status", "total", "itens")
 
 
 class CriarEditarItensPedidoSerializer(ModelSerializer):
     class Meta:
         model = ItensPedido
-        fields = ("produto", "quantidade")
+        fields = ("produto")
 
     def validate(self, data):
-         if data["quantidade"] > data["produto"].quantidade:
-             raise serializers.ValidationError({"quantidade": "Quantidade solicitada não disponível em estoque."})
          return data
 
 
 class CriarEditarPedidoSerializer(ModelSerializer):
-    itens = CriarEditarItensPedidoSerializer(many=True)
-    # usuario = serializers.HiddenField(default=serializers.CurrentUserDefault())
-    data = serializers.DateTimeField(read_only=True)
+    itens = serializers.ListField(child = serializers.IntegerField(), write_only=True)
 
     class Meta:
         model = Pedido
-        fields = ("data", "itens")
+        fields = ("cliente", "mesa", "itens")
 
     def create(self, validated_data):
         itens = validated_data.pop("itens")
         pedido = Pedido.objects.create(**validated_data)
         for item in itens:
-            item["preco_item"] = item["produto"].preco  # Coloquem o preço do produto no item de compra
-            ItensPedido.objects.create(pedido=pedido, **item)
+            print(item)
+            produto = Produto.objects.get(id=item)
+            preco_item = produto.preco
+            quantidade = produto.quantidade
+            ItensPedido.objects.create(pedido=pedido, produto=produto, preco_item=preco_item, quantidade=quantidade)
         pedido.save()
         return pedido
 

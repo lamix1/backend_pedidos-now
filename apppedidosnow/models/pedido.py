@@ -10,6 +10,8 @@ class Pedido(models.Model):
         
     # usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, related_name="pedidos")
     status = models.IntegerField(choices=StatusPedido.choices,  default=StatusPedido.PRODUCAO)
+    mesa = models.CharField(max_length=10)
+    cliente = models.CharField(max_length=200)
 
     @property
     def total(self):

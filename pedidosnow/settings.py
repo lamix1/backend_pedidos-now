@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "corsheaders",
+    "rest_framework",
     "rest_framework_simplejwt",
     "drf_spectacular",
-    "rest_framework",
     "django_filters",
     "apppedidosnow",
 ]

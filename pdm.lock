@@ -229,6 +229,12 @@ requires_python = ">=3.8"
 summary = "Python bindings to Rust's persistent data structures (rpds)"
 
 [[package]]
+name = "setuptools"
+version = "68.2.2"
+requires_python = ">=3.8"
+summary = "Easily download, build, install, upgrade, and uninstall Python packages"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.4"
 requires_python = ">=3.5"
@@ -262,7 +268,7 @@ summary = "Implementation of RFC 6570 URI Templates"
 lock_version = "4.2"
 cross_platform = true
 groups = ["default", "dev"]
-content_hash = "sha256:39eb37af00e1ef6248a454f06aa6fd1397bd00815c97d1b15953497c85e30333"
+content_hash = "sha256:af5edbe769364db514a070a4923b229fe3ba563e581beb3bee1660be29e873bd"
 
 [metadata.files]
 "asgiref 3.7.2" = [
@@ -590,6 +596,10 @@ content_hash = "sha256:39eb37af00e1ef6248a454f06aa6fd1397bd00815c97d1b15953497c8
     {url = "https://files.pythonhosted.org/packages/fd/56/7b034b21bb815afbc8458dd591f82d7f02fb02ca302ecd0bca076ca4b06d/rpds_py-0.10.3-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:77076bdc8776a2b029e1e6ffbe6d7056e35f56f5e80d9dc0bad26ad4a024a762"},
     {url = "https://files.pythonhosted.org/packages/fe/30/a4eeeb4eb0f3abb91e2352d8172df11f6cb8434dfa97566b9f2e6a0c2317/rpds_py-0.10.3-pp39-pypy39_pp73-musllinux_1_2_aarch64.whl", hash = "sha256:39d05e65f23a0fe897b6ac395f2a8d48c56ac0f583f5d663e0afec1da89b95da"},
     {url = "https://files.pythonhosted.org/packages/fe/80/a160cd2b03747e7b5eac453916fdb6c7ad41e9ea0958df08c0e4e1ff9458/rpds_py-0.10.3-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:22da15b902f9f8e267020d1c8bcfc4831ca646fecb60254f7bc71763569f56b1"},
+]
+"setuptools 68.2.2" = [
+    {url = "https://files.pythonhosted.org/packages/bb/26/7945080113158354380a12ce26873dd6c1ebd88d47f5bc24e2c5bb38c16a/setuptools-68.2.2-py3-none-any.whl", hash = "sha256:b454a35605876da60632df1a60f736524eb73cc47bbc9f3f1ef1b644de74fd2a"},
+    {url = "https://files.pythonhosted.org/packages/ef/cc/93f7213b2ab5ed383f98ce8020e632ef256b406b8569606c3f160ed8e1c9/setuptools-68.2.2.tar.gz", hash = "sha256:4ac1475276d2f1c48684874089fefcd83bd7162ddaafb81fac866ba0db282a87"},
 ]
 "sqlparse 0.4.4" = [
     {url = "https://files.pythonhosted.org/packages/65/16/10f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574/sqlparse-0.4.4.tar.gz", hash = "sha256:d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"},
